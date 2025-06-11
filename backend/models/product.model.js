@@ -13,5 +13,11 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    
+
+}, {
+    timestamps: true // createdAt, updatedAt fields are auto-provided
 })
+
+const Product = mongoose.model('Product', productSchema);
+
+export default Product;
