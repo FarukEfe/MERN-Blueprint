@@ -1,4 +1,5 @@
-import { Box, Container, Heading, useColorModeValue, VStack } from "@chakra-ui/react";
+import { Box, Container, Heading, /* useColorModeValue, */ VStack } from "@chakra-ui/react";
+import { Button, Input } from "@chakra-ui/react";
 
 import { useState } from "react";
 
@@ -27,7 +28,7 @@ const CreatePage = () => {
                 w={'full'} bg={useColorModeValue('white', 'gray.800')}
                 p={6} rounded={'lg'} shadow={'md'}
             >
-                <Vstack spacing={4}>
+                <VStack spacing={4}>
                     <Input
                         placeholer='Product Name'
                         name='name'
@@ -37,19 +38,19 @@ const CreatePage = () => {
                     <Input
                         placeholer='Product Price'
                         name='price'
-                        value={newProduct.name}
+                        value={newProduct.price}
                         onChange={(e) => useProduct({ ...newProduct, price: e.target.value }) }
                     />
                     <Input
                         placeholer='Product Image'
                         name='image'
-                        value={newProduct.name}
+                        value={newProduct.image}
                         onChange={(e) => useProduct({ ...newProduct, image: e.target.value }) }
                     />
                     <Button colorScheme='blue' onClick={handleAddProduct} w='full'>
                         Add Product
                     </Button>
-                </Vstack>
+                </VStack>
             </Box>
         </VStack>
     </Container>
